@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيرة النبوية</title>
+    <style>
+        /* --- 1. تنسيقات الـ CSS --- */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fafafa;
+            padding-bottom: 70px; /* مساحة للشريط السفلي */
+        }
+
+        /* تنسيق الصفحات */
+        .page {
+            display: none; /* إخفاء كل الصفحات */
+            padding: 40px 20px;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        .active-page {
+            display: block; /* إظهار الصفحة النشطة فقط */
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* تنسيق الشريط السفلي */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 65px;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 1px solid #dbdbdb;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: #8e8e8e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            transition: 0.2s;
+        }
+
+        .nav-item .icon {
+            font-size: 22px;
+            margin-bottom: 2px;
+        }
+
+        .nav-item span.text {
+            font-size: 11px;
+        }
+
+
+       /* تنسيق الزر النشط ليكون أكبر */
+.nav-item.active {
+    color: #0095f6; /* لون أزرق مثل إنستقرام */
+    transform: scale(1.2); /* تكبير الزر بنسبة 20% */
+    transition: transform 0.3s ease; /* جعل الحركة ناعمة وسلسة */
+}
+
+/* لضمان أن الأيقونة نفسها تكون واضحة عند التكبير */
+.nav-item.active .icon {
+    font-size: 26px; /* زيادة حجم الأيقونة فقط عند النشاط */
+}
+
+/* تأثير بسيط عند الضغط بالماوس (اختياري) */
+.nav-item:active {
+    transform: scale(0.9); /* ينكمش قليلاً عند الضغط لحظياً لإعطاء شعور بالضغط الحقيقي */
+}
+
+        h1 {
+            color: #262626;
+            margin-top: 200px;
+        }
+
+        /* حاوية الروابط */
+.links-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* جعلها عمودين بجانب بعض */
+    gap: 15px; /* مسافة بين الأزرار */
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto; /* توسيط الحاوية */
+}
+
+/* تنسيق الزر/الرابط الواحد */
+.custom-link {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid #e0e0e0;
+    padding: 20px 10px;
+    border-radius: 50%; /* حواف دائرية أنيقة */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #262626;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* ظل خفيف */
+    
+    
+}
+
+/* تأثير عند تمرير الماوس أو اللمس */
+.custom-link:hover {
+    transform: translateY(-5px); /* يرتفع للأعلى قليلاً */
+    background-color: #f0f8ff; /* يتغير لونه قليلاً */
+    border-color: #0095f6;
+}
+
+.link-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.link-text {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+
+        #home {
+            background-image: url(img/IMG-20260215-WA0000.jpg);
+            background-size: cover;
+            background-position: center;
+             }
+            
+            
+            
+        
+    </style>
+</head>
+<body>
+
+    <div id="content">
+        <section id="home" class="page active-page">
+            
+            <h1>🏠 الصفحة الرئيسية</h1>
+            
+
+            <div class="links-container">
+            <a href="1.html" class="custom-link">
+                <span class="link-icon">📄</span>
+                <span class="link-text">الصفحة الأولى</span>
+            </a>
+            <a href="2.html" class="custom-link">
+                <span class="link-icon">🔗</span>
+                <span class="text">رابط إضافي 2</span>
+            </a>
+            <a href="3.html" class="custom-link">
+                <span class="link-icon">🌟</span>
+                <span class="link-text">رابط إضافي 3</span>
+            </a>
+            <a href="4.html" class="custom-link">
+                <span class="link-icon">⚙️</span>
+                <span class="link-text">رابط إضافي 4</span>
+            </a>
+    </div>
+
+        </section>
+
+        <section id="add" class="page">
+            <h1>🔗 روابط اضافية</h1>
+            <p>المحتوى</p>
+        </section>
+
+        <section id="profile" class="page">
+            <h1>👤 صاحب المشروع</h1>
+            <p>المحتوى</p>
+        </section>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active" data-target="home">
+            <span class="icon">🏠</span>
+            <span class="text">الرئيسية</span>
+        
+        <a href="#" class="nav-item" data-target="add">
+            <span class="icon">🔗</span>
+            <span class="text">روابط</span>
+        </a>
+        <a href="#" class="nav-item" data-target="profile">
+            <span class="icon">👤</span>
+            <span class="text">عنا</span>
+        </a>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navItems = document.querySelectorAll('.nav-item');
+            const pages = document.querySelectorAll('.page');
+
+            navItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    // الحصول على اسم الصفحة المستهدفة
+                    const targetId = this.getAttribute('data-target');
+
+                    // 1. تبديل الصفحات
+                    pages.forEach(page => {
+                        page.classList.remove('active-page');
+                    });
+                    document.getElementById(targetId).classList.add('active-page');
+
+                    // 2. تبديل لون الأيقونات
+                    navItems.forEach(nav => {
+                        nav.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+    </body>
+</html>
